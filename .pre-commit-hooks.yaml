@@ -1,0 +1,18 @@
+- id: gofmt
+  name: Go Fmt
+  entry: golang/gofmt.sh
+  language: script
+  files: \.go$
+  exclude: (^vendor/)|(\.pb\.go$)
+- id: goimports
+  name: Go Imports
+  entry: golang/goimports.sh
+  language: script
+  files: \.go$
+  exclude: (^vendor/)|(\.pb\.go$)
+- id: go-vet
+  name: Go Vet
+  entry: golang/go-vet.sh
+  language: script
+  files: \.go$
+  exclude: (^vendor/)|(\.pb\.go$)
