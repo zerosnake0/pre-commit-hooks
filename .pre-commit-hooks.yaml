@@ -16,3 +16,9 @@
   language: script
   files: \.go$
   exclude: (^vendor/)|(\.pb\.go$)
+- id: go-mod-tidy
+  name: Go Mod Tidy
+  entry: golang/go-mod-tidy.sh
+  language: script
+  files: (\.go$)|(go\.mod)|(go\.sum)
+  exclude: ^vendor/
