@@ -22,3 +22,8 @@
   language: script
   files: (\.go$)|(go\.mod)|(go\.sum)
   exclude: ^vendor/
+- id: thriftfmt
+  name: Thrift Format
+  entry: thrift/thriftfmt.sh
+  language: script
+  files: \.thrift$

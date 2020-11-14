@@ -11,7 +11,7 @@ in `.pre-commit-config.yaml`
 ```yaml
 repos:
   - repo: https://github.com/zerosnake0/pre-commit-hooks
-    rev: v0.0.2
+    rev: v0.0.5
     hooks:
       - id: gofmt
       - id: goimports
