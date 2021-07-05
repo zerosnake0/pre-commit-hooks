@@ -1,9 +1,23 @@
 #!/usr/bin/env bash
+
 set -e
 
-if ! which thriftfmt </dev/null >/dev/null 2>&1; then
-    echo "thriftfmt not found, run: GO111MODULE=off go get -u github.com/zerosnake0/gothrift/cmd/thriftfmt"
-    exit 1
+VERSION=0.0.2
+
+update() {
+    echo "Downloading thriftfmt ${VERSION}..."
+    local TEMP_DIR
+    TEMP_DIR=$(mktemp -d)
+    (cd "${TEMP_DIR}" && GO111MODULE=on go get -u "github.com/zerosnake0/gothrift/cmd/thriftfmt@v${VERSION}")
+    rm -r "${TEMP_DIR}"
+}
+
+if CURRENT_VERSION=$(thriftfmt -V); then
+    if [[ "${CURRENT_VERSION}" != "${VERSION}" ]]; then
+        update
+    fi
+else
+    update
 fi
 
 files=()

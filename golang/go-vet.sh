@@ -21,5 +21,7 @@ done
 dirs=$(echo "${gofiles[@]}" | xargs -n1 dirname | sort -u)
 pkg=$(go list -m)
 for dir in ${dirs}; do
-    go vet "${vetargs[@]}" "${pkg}/${dir}"
+    # we must go into the subdirectory to deal with
+    # the condition where go.mod is in subdirectory
+    (cd "${dir}" && go vet "${vetargs[@]}" .)
 done
