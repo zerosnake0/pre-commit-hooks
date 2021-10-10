@@ -27,3 +27,9 @@
   entry: thrift/thriftfmt.sh
   language: script
   files: \.thrift$
+- id: prototool
+  name: prototool
+  entry: protobuf/prototool.sh
+  language: script
+  files: (\.proto$)|(prototool.yaml)｜(prototool.json)
+  pass_filenames: false
