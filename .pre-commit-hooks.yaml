@@ -33,3 +33,10 @@
   language: script
   files: (\.proto$)|(prototool.yaml)｜(prototool.json)
   pass_filenames: false
+- id: golangci-lint
+  name: golangci-lint
+  entry: golang/golangci-lint.sh
+  language: script
+  files: \.go$
+  exclude: (^vendor/)|(\.pb\.go$)
+  pass_filenames: false
