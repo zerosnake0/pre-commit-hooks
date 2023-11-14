@@ -8,7 +8,7 @@ fi
 if ! which goimports </dev/null >/dev/null 2>&1; then
 	echo "Downloading goimports..."
 	TEMP_DIR=$(mktemp -d)
-	(cd "${TEMP_DIR}" && GO111MODULE=on go get -u golang.org/x/tools/cmd/goimports)
+	(cd "${TEMP_DIR}" && GO111MODULE=on go install golang.org/x/tools/cmd/goimports@latest)
 	rm -r "${TEMP_DIR}"
 fi
 
