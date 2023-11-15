@@ -10,6 +10,7 @@
   language: script
   files: \.go$
   exclude: (^vendor/)|(\.pb\.go$)
+  require_serial: true # for binary install step
 - id: go-vet
   name: Go Vet
   entry: golang/go-vet.sh
@@ -27,6 +28,7 @@
   entry: thrift/thriftfmt.sh
   language: script
   files: \.thrift$
+  require_serial: true # for binary install step
 - id: prototool
   name: prototool
   entry: protobuf/prototool.sh
@@ -40,3 +42,4 @@
   files: \.go$
   exclude: (^vendor/)|(\.pb\.go$)
   pass_filenames: false
+  require_serial: true # for binary install step
