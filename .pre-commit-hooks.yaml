@@ -27,6 +27,7 @@
   entry: thrift/thriftfmt.sh
   language: script
   files: \.thrift$
+  require_serial: true
 - id: prototool
   name: prototool
   entry: protobuf/prototool.sh
